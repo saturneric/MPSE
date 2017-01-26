@@ -22,6 +22,7 @@
 		07F817A71E3A210700EDEC0E /* ME.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F817A61E3A210700EDEC0E /* ME.png */; };
 		07F817AB1E3A226500EDEC0E /* PointType.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F817AA1E3A226500EDEC0E /* PointType.png */; };
 		07F817AD1E3A22E500EDEC0E /* PointType.ico in Resources */ = {isa = PBXBuildFile; fileRef = 07F817AC1E3A22E500EDEC0E /* PointType.ico */; };
+		07F817B21E3A995600EDEC0E /* Detail.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F817B11E3A995600EDEC0E /* Detail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		07F817AA1E3A226500EDEC0E /* PointType.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PointType.png; sourceTree = "<group>"; };
 		07F817AC1E3A22E500EDEC0E /* PointType.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = PointType.ico; sourceTree = "<group>"; };
 		07F817AE1E3A50F800EDEC0E /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		07F817B01E3A994C00EDEC0E /* Detail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Detail.h; sourceTree = "<group>"; };
+		07F817B11E3A995600EDEC0E /* Detail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Detail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 		070A8CFC1E389EAD00EA67A3 /* MPSE */ = {
 			isa = PBXGroup;
 			children = (
+				07F817AF1E3A993F00EDEC0E /* Detail */,
 				0768B3631E39A9AF0063CC0A /* User */,
 				070A8D301E38A54900EA67A3 /* Map */,
 				070A8D001E389EAD00EA67A3 /* AppDelegate.h */,
@@ -191,6 +195,15 @@
 				0768B3641E39A9CD0063CC0A /* User.m */,
 			);
 			name = User;
+			sourceTree = "<group>";
+		};
+		07F817AF1E3A993F00EDEC0E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				07F817B01E3A994C00EDEC0E /* Detail.h */,
+				07F817B11E3A995600EDEC0E /* Detail.m */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +344,7 @@
 			files = (
 				0768B3651E39A9CD0063CC0A /* User.m in Sources */,
 				070A8D051E389EAD00EA67A3 /* ViewController.m in Sources */,
+				07F817B21E3A995600EDEC0E /* Detail.m in Sources */,
 				070A8D021E389EAD00EA67A3 /* AppDelegate.m in Sources */,
 				070A8D351E38B73A00EA67A3 /* Map.m in Sources */,
 				070A8CFF1E389EAD00EA67A3 /* main.m in Sources */,

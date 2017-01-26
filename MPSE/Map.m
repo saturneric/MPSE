@@ -7,19 +7,24 @@
 //
 
 #import "Map.h"
-#import "Post.h"
+#import "Detail.h"
+
+@implementation MKAnnotationViewPlus
+
+
+@end
 
 @interface MapDelegate(){
     UIImage * UserImagine;
     UIImage * PointImagine;
-    NSString * UserID;
-    NSString * PostID;
 }
 
 
 @property (weak, nonatomic) IBOutlet MKMapView *MapNear;
 @property (strong, nonatomic) MKPointAnnotation<MKAnnotation> *AnnotationPointTarget;
 @property (nonatomic) CLLocationCoordinate2D MyLocationNow;
+@property (strong, nonatomic) MSPost *ThisPost;
+@property (strong, nonatomic) MKAnnotationViewPlus *SelectedAnnotationView;
 
 @end
 
@@ -62,28 +67,27 @@
 }
 
 -(void)MapAddAnnotation:(NSNotification *) Notification{
-    NSArray *SharePost = Notification.object;
+    MSPost *SharePost = Notification.object;
     self.AnnotationPointTarget = [[MKPointAnnotation alloc] init];
     
-    [_AnnotationPointTarget setTitle: [SharePost objectAtIndex:0]];
-    if ([[SharePost objectAtIndex:1] length] >25){
-        [_AnnotationPointTarget setSubtitle:[SharePost objectAtIndex:1]];
-    }
-    else{
-        [_AnnotationPointTarget setSubtitle:[SharePost objectAtIndex:1]];
-    }
-    UserImagine = [SharePost objectAtIndex:2];
+    self.ThisPost = SharePost;
+    
+    //Need to be rewrite
+    [_AnnotationPointTarget setTitle: @"ME"];
+    UserImagine = [UIImage imageNamed:@"ME.png"];
+    
+    _AnnotationPointTarget.subtitle = self.ThisPost.Text;
     _AnnotationPointTarget.coordinate = _MyLocationNow;
     [_MapNear addAnnotation:_AnnotationPointTarget];
     
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
+- (MKAnnotationViewPlus *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
     if([annotation isKindOfClass:[MKUserLocation class]]) return nil;
     if([annotation isKindOfClass:[MKPointAnnotation class]]){
-        MKAnnotationView *DefineView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"ShareBy"];
+        MKAnnotationViewPlus *DefineView = (MKAnnotationViewPlus *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"ShareBy"];
         if(!DefineView){
-            DefineView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"ShareBy"];
+            DefineView = [[MKAnnotationViewPlus alloc] initWithAnnotation:annotation reuseIdentifier:@"ShareBy"];
             [DefineView setImage:PointImagine];
             DefineView.canShowCallout = YES;
             
@@ -97,18 +101,23 @@
             DetailButton.frame = CGRectMake(0, 0, 50, 50);
             DetailButton.backgroundColor = [UIColor clearColor];
             [DetailButton setTitle:@"详情" forState:UIControlStateNormal];
-            
-            NSArray *ThisAnnotationDetail = [[NSArray alloc] initWithObjects:annotation,TargetImagineView, nil];
-            
-            
             [DetailButton addTarget:self action: @selector(DetailButtonOnClick:) forControlEvents:UIControlEventTouchUpInside];
+            
+            //NSArray *ThisAnnotationDetail = [[NSArray alloc] initWithObjects:annotation,TargetImagineView, nil];
+            
+            UILabel *DescribtionText = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 80)];
+            DescribtionText.text = self.ThisPost.Text;
+            [DescribtionText setNumberOfLines:5];
+            DescribtionText.font = [UIFont fontWithName:@"System" size:4];
+            
             
             TargetImagineView.contentMode = UIViewContentModeScaleToFill;
             [LeftView addSubview:TargetImagineView];
             [DefineView setLeftCalloutAccessoryView:LeftView];
             [DefineView setRightCalloutAccessoryView:DetailButton];
-            [DefineView setDetailCalloutAccessoryView:DetailButton];
+            [DefineView setDetailCalloutAccessoryView:DescribtionText];
             DefineView.canShowCallout = YES;
+            DefineView.Post = self.ThisPost;
         }
         return DefineView;
     }
@@ -116,6 +125,19 @@
 }
 
 - (void)DetailButtonOnClick:(UIButton *) button{
+    UIStoryboard *MainStoryBroad = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
+    DetailViewDelegate *ThisDetailView = [MainStoryBroad instantiateViewControllerWithIdentifier:@"DetailViewSelected"];
+    
+    ThisDetailView.ThisPost = self.SelectedAnnotationView.Post;
+    NSLog(@"%@",self.SelectedAnnotationView.Post);
+    [self presentViewController:ThisDetailView animated:YES completion:^{}];
+    
+}
+
+-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationViewPlus *)view
+{
+    self.SelectedAnnotationView = view;
     
 }
 

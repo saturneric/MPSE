@@ -44,3 +44,14 @@
 
 
 @end
+
+@interface MSAskForImagine : NSObject
+
+@property(strong,nonatomic)NSString *UserID;
+@property(strong,nonatomic)MSConnectServer *Server;
+
+- (void)GetUserImagine;
+- (void)GetUserImagineSuccess:(UIImage *)imagine;
+- (void)GetUserImagineFail:(NSString *)error;
+
+@end

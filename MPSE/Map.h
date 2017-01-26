@@ -8,8 +8,16 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <MapKit/MKAnnotation.h>
+#import "Post.h";
 
 @interface MapDelegate : UIViewController<MKMapViewDelegate>
 
+
+@end
+
+
+@interface MKAnnotationViewPlus : MKAnnotationView
+
+@property(strong,nonatomic) MSPost *Post;
 
 @end

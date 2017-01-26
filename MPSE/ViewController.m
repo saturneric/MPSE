@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Post.h"
 
 @interface ViewController ()
 
@@ -71,13 +72,19 @@
     NSString *ShareTextNow = _ShareText.text;
     NSString *Username = @"Me";
     UIImage *UserImagine = [UIImage imageNamed:@"Me.png"];
+    MSPost *ThisPost = [[MSPost alloc] init];
+    NSString *PostID = [[NSUUID UUID] UUIDString];
+    NSString *Time = @"2017-1-1";
     
-    NSUUID *PostID = [[NSUUID alloc] init];
+    ThisPost.PostID = PostID;
+    ThisPost.Text = ShareTextNow;
+    ThisPost.Username = Username;
+    ThisPost.Time = Time;
     
     
-    NSArray *SharePost = [[NSArray alloc] initWithObjects:Username,ShareTextNow,UserImagine,nil];
+    //NSArray *SharePost = [[NSArray alloc] initWithObjects:Username,ShareTextNow,UserImagine,nil];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MapAddTarget" object:SharePost];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MapAddTarget" object:ThisPost];
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
 }
 
