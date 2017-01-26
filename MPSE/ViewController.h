@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#include <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController
+#import "Post.h"
+
+@interface ViewController : UIViewController<UITextViewDelegate, CLLocationManagerDelegate>
 
 
 @end

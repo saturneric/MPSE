@@ -15,6 +15,13 @@
 		070A8D0D1E389EAE00EA67A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070A8D0B1E389EAE00EA67A3 /* LaunchScreen.storyboard */; };
 		070A8D181E389EAE00EA67A3 /* MPSETests.m in Sources */ = {isa = PBXBuildFile; fileRef = 070A8D171E389EAE00EA67A3 /* MPSETests.m */; };
 		070A8D231E389EAE00EA67A3 /* MPSEUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 070A8D221E389EAE00EA67A3 /* MPSEUITests.m */; };
+		070A8D331E38A96D00EA67A3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070A8D321E38A96D00EA67A3 /* CoreLocation.framework */; };
+		070A8D351E38B73A00EA67A3 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = 070A8D341E38B73A00EA67A3 /* Map.m */; };
+		070A8D381E38B96D00EA67A3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070A8D371E38B96D00EA67A3 /* MapKit.framework */; };
+		0768B3651E39A9CD0063CC0A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768B3641E39A9CD0063CC0A /* User.m */; };
+		07F817A71E3A210700EDEC0E /* ME.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F817A61E3A210700EDEC0E /* ME.png */; };
+		07F817AB1E3A226500EDEC0E /* PointType.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F817AA1E3A226500EDEC0E /* PointType.png */; };
+		07F817AD1E3A22E500EDEC0E /* PointType.ico in Resources */ = {isa = PBXBuildFile; fileRef = 07F817AC1E3A22E500EDEC0E /* PointType.ico */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,16 @@
 		070A8D1E1E389EAE00EA67A3 /* MPSEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MPSEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		070A8D221E389EAE00EA67A3 /* MPSEUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPSEUITests.m; sourceTree = "<group>"; };
 		070A8D241E389EAE00EA67A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		070A8D321E38A96D00EA67A3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		070A8D341E38B73A00EA67A3 /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
+		070A8D361E38B74400EA67A3 /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		070A8D371E38B96D00EA67A3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0768B3621E39A9AA0063CC0A /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		0768B3641E39A9CD0063CC0A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		07F817A61E3A210700EDEC0E /* ME.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ME.png; sourceTree = "<group>"; };
+		07F817AA1E3A226500EDEC0E /* PointType.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PointType.png; sourceTree = "<group>"; };
+		07F817AC1E3A22E500EDEC0E /* PointType.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = PointType.ico; sourceTree = "<group>"; };
+		07F817AE1E3A50F800EDEC0E /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070A8D381E38B96D00EA67A3 /* MapKit.framework in Frameworks */,
+				070A8D331E38A96D00EA67A3 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +104,7 @@
 				070A8D161E389EAE00EA67A3 /* MPSETests */,
 				070A8D211E389EAE00EA67A3 /* MPSEUITests */,
 				070A8CFB1E389EAD00EA67A3 /* Products */,
+				070A8D311E38A96D00EA67A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +121,8 @@
 		070A8CFC1E389EAD00EA67A3 /* MPSE */ = {
 			isa = PBXGroup;
 			children = (
+				0768B3631E39A9AF0063CC0A /* User */,
+				070A8D301E38A54900EA67A3 /* Map */,
 				070A8D001E389EAD00EA67A3 /* AppDelegate.h */,
 				070A8D011E389EAD00EA67A3 /* AppDelegate.m */,
 				070A8D031E389EAD00EA67A3 /* ViewController.h */,
@@ -117,6 +139,9 @@
 		070A8CFD1E389EAD00EA67A3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				07F817A61E3A210700EDEC0E /* ME.png */,
+				07F817AC1E3A22E500EDEC0E /* PointType.ico */,
+				07F817AA1E3A226500EDEC0E /* PointType.png */,
 				070A8CFE1E389EAD00EA67A3 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +163,34 @@
 				070A8D241E389EAE00EA67A3 /* Info.plist */,
 			);
 			path = MPSEUITests;
+			sourceTree = "<group>";
+		};
+		070A8D301E38A54900EA67A3 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				070A8D341E38B73A00EA67A3 /* Map.m */,
+				070A8D361E38B74400EA67A3 /* Map.h */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		070A8D311E38A96D00EA67A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				070A8D371E38B96D00EA67A3 /* MapKit.framework */,
+				070A8D321E38A96D00EA67A3 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0768B3631E39A9AF0063CC0A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				07F817AE1E3A50F800EDEC0E /* Post.h */,
+				0768B3621E39A9AA0063CC0A /* User.h */,
+				0768B3641E39A9CD0063CC0A /* User.m */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,9 +299,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F817A71E3A210700EDEC0E /* ME.png in Resources */,
 				070A8D0D1E389EAE00EA67A3 /* LaunchScreen.storyboard in Resources */,
 				070A8D0A1E389EAE00EA67A3 /* Assets.xcassets in Resources */,
 				070A8D081E389EAD00EA67A3 /* Main.storyboard in Resources */,
+				07F817AB1E3A226500EDEC0E /* PointType.png in Resources */,
+				07F817AD1E3A22E500EDEC0E /* PointType.ico in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +329,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0768B3651E39A9CD0063CC0A /* User.m in Sources */,
 				070A8D051E389EAD00EA67A3 /* ViewController.m in Sources */,
 				070A8D021E389EAD00EA67A3 /* AppDelegate.m in Sources */,
+				070A8D351E38B73A00EA67A3 /* Map.m in Sources */,
 				070A8CFF1E389EAD00EA67A3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +563,7 @@
 				070A8D291E389EAE00EA67A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		070A8D2A1E389EAE00EA67A3 /* Build configuration list for PBXNativeTarget "MPSETests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +572,7 @@
 				070A8D2C1E389EAE00EA67A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		070A8D2D1E389EAE00EA67A3 /* Build configuration list for PBXNativeTarget "MPSEUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +581,7 @@
 				070A8D2F1E389EAE00EA67A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
